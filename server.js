@@ -20,6 +20,10 @@ app.use((req, res) => {
   res.status(404).redirect('/');
 });
 
-app.listen(PORT, () => {
-  console.log(`LANZAA website running at http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`LANZAA website running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

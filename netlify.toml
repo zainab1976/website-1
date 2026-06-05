@@ -1,0 +1,17 @@
+[build]
+  command = "npm install"
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["views/**", "models/**", "controllers/**", "routes/**", "middleware/**"]
+
+# Static files in /public are served first; other routes go to Express
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
