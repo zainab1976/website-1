@@ -3,17 +3,19 @@ const express = require('express');
 const routes = require('./routes');
 const seoMiddleware = require('./middleware/seo');
 const staticCacheMiddleware = require('./middleware/staticCache');
+const { resolveProjectRoot } = require('./utils/paths');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const rootDir = resolveProjectRoot();
 
 app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(rootDir, 'views'));
 
 app.use(seoMiddleware);
 app.use(staticCacheMiddleware);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(rootDir, 'public')));
 app.use('/', routes);
 
 app.use((req, res) => {

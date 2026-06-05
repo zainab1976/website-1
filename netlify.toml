@@ -8,7 +8,10 @@
 
 [functions]
   node_bundler = "esbuild"
-  included_files = ["views/**", "models/**", "controllers/**", "routes/**", "middleware/**"]
+  included_files = ["views/**", "models/**", "controllers/**", "routes/**", "middleware/**", "utils/**"]
+
+[functions.server]
+  included_files = ["views/**", "models/**", "controllers/**", "routes/**", "middleware/**", "utils/**"]
 
 # Static files in /public are served first; other routes go to Express
 [[redirects]]
