@@ -1,0 +1,50 @@
+<header id="main-navbar" class="navbar-glass text-white sticky top-0 z-40">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <a href="/" class="flex items-center group" aria-label="LANZAA Hair & Skin Home">
+        <%- include('logo.html', { logoSize: 'sm' }) %>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="nav-link text-sm uppercase tracking-wider <%= activePage === 'home' ? 'active text-gold' : 'text-gray-300 hover:text-gold' %> transition-colors">Home</a>
+        <a href="/product" class="nav-link text-sm uppercase tracking-wider <%= activePage === 'product' ? 'active text-gold' : 'text-gray-300 hover:text-gold' %> transition-colors">Product</a>
+        <a href="/about" class="nav-link text-sm uppercase tracking-wider <%= activePage === 'about' ? 'active text-gold' : 'text-gray-300 hover:text-gold' %> transition-colors">About</a>
+        <a href="/contact" class="nav-link text-sm uppercase tracking-wider <%= activePage === 'contact' ? 'active text-gold' : 'text-gray-300 hover:text-gold' %> transition-colors">Contact</a>
+        <button type="button" data-cart-open class="relative p-2 text-gold hover:text-gold-light transition-colors" aria-label="Open cart">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span data-cart-count class="hidden absolute -top-1 -right-1 bg-maroon text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </button>
+        <a href="<%= product.whatsappUrl %>" target="_blank" rel="noopener noreferrer" class="btn-whatsapp px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide" aria-label="Order Now on WhatsApp">
+          Order Now
+        </a>
+      </div>
+
+      <div class="flex md:hidden items-center gap-2">
+        <button type="button" data-cart-open class="relative p-2 text-gold" aria-label="Open cart">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span data-cart-count class="hidden absolute -top-1 -right-1 bg-maroon text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </button>
+        <button id="menu-toggle" class="p-2 text-gold" aria-label="Toggle menu">
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-800/50">
+      <div class="flex flex-col gap-3 pt-4">
+        <a href="/" class="px-3 py-2 text-sm uppercase tracking-wider <%= activePage === 'home' ? 'text-gold' : 'text-gray-300' %>">Home</a>
+        <a href="/product" class="px-3 py-2 text-sm uppercase tracking-wider <%= activePage === 'product' ? 'text-gold' : 'text-gray-300' %>">Product</a>
+        <a href="/about" class="px-3 py-2 text-sm uppercase tracking-wider <%= activePage === 'about' ? 'text-gold' : 'text-gray-300' %>">About</a>
+        <a href="/contact" class="px-3 py-2 text-sm uppercase tracking-wider <%= activePage === 'contact' ? 'text-gold' : 'text-gray-300' %>">Contact</a>
+        <a href="<%= product.whatsappUrl %>" target="_blank" rel="noopener noreferrer" class="btn-whatsapp mx-3 mt-2 px-5 py-3 rounded-full text-sm font-semibold text-center uppercase tracking-wide" aria-label="Order on WhatsApp">
+          Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

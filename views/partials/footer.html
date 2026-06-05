@@ -1,0 +1,46 @@
+<footer class="bg-black-brand text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="text-center md:text-left">
+        <div class="flex justify-center md:justify-start mb-4">
+          <%- include('logo.html', { logoSize: 'md' }) %>
+        </div>
+        <p class="text-sm leading-relaxed text-gray-400">
+          Premium natural hair care crafted with care. Experience the power of onion & almond oil for healthier, stronger hair.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="font-display text-lg text-gold mb-4 tracking-wide">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/" class="hover:text-gold transition-colors">Home</a></li>
+          <li><a href="/product" class="hover:text-gold transition-colors">Product</a></li>
+          <li><a href="/about" class="hover:text-gold transition-colors">About</a></li>
+          <li><a href="/contact" class="hover:text-gold transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="text-center md:text-right">
+        <h3 class="font-display text-lg text-gold mb-4 tracking-wide">Contact</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="mailto:<%= product.contact.email %>" class="hover:text-gold transition-colors"><%= product.contact.email %></a>
+          </li>
+          <li><%= product.contact.location %></li>
+          <li>
+            <a href="https://<%= product.contact.website %>" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors"><%= product.contact.website %></a>
+          </li>
+        </ul>
+        <a href="<%= product.whatsappUrl %>" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 btn-whatsapp px-6 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide">
+          Order on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="gold-divider mx-auto my-8"></div>
+
+    <p class="text-center text-xs text-gray-500 tracking-wide">
+      &copy; <%= currentYear %> LANZAA Hair & Skin. All rights reserved.
+    </p>
+  </div>
+</footer>

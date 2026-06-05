@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head.html') %>
+</head>
+<body class="antialiased luxury-bg">
+
+  <%- include('partials/loader.html') %>
+  <%- include('partials/navbar.html') %>
+
+  <!-- About Hero -->
+  <section class="luxury-bg-dark py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 text-center relative reveal">
+      <div class="flex justify-center mb-8">
+        <div class="brand-logo brand-logo--lg brand-logo--center">
+          <span class="brand-logo__name">LANZAA</span>
+          <span class="brand-logo__tagline">HAIR &amp; SKIN</span>
+        </div>
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl text-white mb-4">About LANZAA</h1>
+      <p class="text-gray-400 max-w-xl mx-auto">Crafting premium natural beauty from the heart of Lahore, Pakistan.</p>
+    </div>
+  </section>
+
+  <!-- Brand Story -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-left">
+          <p class="section-label mb-2">Our Story</p>
+          <h2 class="font-display text-3xl md:text-4xl text-black-brand mb-6">LANZAA Hair & Skin</h2>
+          <div class="gold-divider mb-8"></div>
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              LANZAA Hair & Skin was born from a passion for natural, effective beauty solutions. Based in Lahore, Pakistan, we craft premium hair and skin care products that blend time-tested ingredients with modern formulation science.
+            </p>
+            <p>
+              Our flagship product — <strong class="text-black-brand">LANZAA Onion Hair Oil</strong> — combines the sulphur-rich power of onion oil with nourishing almond, coconut, olive, black seed, and jojoba oils. Every bottle is designed to deliver visible results: reduced hair fall, stronger roots, and healthier, shinier hair.
+            </p>
+            <p>
+              We believe in transparency, quality, and accessibility. That's why every LANZAA product lists its full ingredients and comes with clear application guidance — so you know exactly what you're putting on your hair and how to get the best results.
+            </p>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-gold/20 product-glow reveal-right">
+          <img src="/images/image7.jpg" alt="LANZAA Onion Hair Oil with natural ingredients" width="600" height="600" class="w-full h-auto object-cover img-fixed" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Timeline -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 reveal">
+        <p class="section-label mb-2">Our Journey</p>
+        <h2 class="font-display text-3xl text-black-brand mb-4">Brand Timeline</h2>
+        <div class="gold-divider mx-auto"></div>
+        <p class="text-gray-500 text-sm mt-4">Scroll to explore our story →</p>
+      </div>
+
+      <div class="timeline-scroll reveal">
+        <% timeline.forEach((item) => { %>
+        <div class="timeline-item glass-card rounded-2xl p-6">
+          <span class="text-gold font-display text-2xl"><%= item.year %></span>
+          <h3 class="font-display text-lg text-black-brand mt-2 mb-3"><%= item.title %></h3>
+          <p class="text-gray-600 text-sm leading-relaxed"><%= item.description %></p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-16 md:py-20 luxury-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="section-label mb-2">What Drives Us</p>
+        <h2 class="font-display text-3xl text-black-brand mb-4">Mission & Vision</h2>
+        <div class="gold-divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <% missionVision.forEach((item, i) => { %>
+        <div class="glass-card rounded-2xl p-10 text-center reveal" style="transition-delay: <%= i * 150 %>ms">
+          <div class="icon-3d w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center">
+            <% if (item.icon === 'mission') { %>
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <% } else { %>
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            <% } %>
+          </div>
+          <h3 class="font-display text-2xl text-black-brand mb-4"><%= item.title %></h3>
+          <p class="text-gray-600 text-sm leading-relaxed"><%= item.description %></p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <h2 class="font-display text-3xl text-black-brand mb-4">What We Stand For</h2>
+        <div class="gold-divider mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card text-center p-8 rounded-2xl reveal">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h3 class="font-display text-xl mb-2">Natural Ingredients</h3>
+          <p class="text-gray-600 text-sm">We use carefully selected natural oils and botanical extracts in every formula.</p>
+        </div>
+        <div class="glass-card text-center p-8 rounded-2xl reveal" style="transition-delay: 100ms">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <h3 class="font-display text-xl mb-2">Premium Quality</h3>
+          <p class="text-gray-600 text-sm">Luxury packaging and formulations that meet the highest standards of care.</p>
+        </div>
+        <div class="glass-card text-center p-8 rounded-2xl reveal" style="transition-delay: 200ms">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-display text-xl mb-2">Customer First</h3>
+          <p class="text-gray-600 text-sm">Easy WhatsApp ordering and dedicated support for every customer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Details -->
+  <section class="py-16 luxury-bg-dark">
+    <div class="max-w-3xl mx-auto px-4 text-center reveal">
+      <h2 class="font-display text-3xl text-white mb-8">Get in Touch</h2>
+      <div class="glass-card-dark rounded-2xl p-8 space-y-4">
+        <div class="flex items-center justify-center gap-3 text-gray-300">
+          <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <a href="mailto:<%= product.contact.email %>" class="hover:text-gold transition-colors"><%= product.contact.email %></a>
+        </div>
+        <div class="flex items-center justify-center gap-3 text-gray-300">
+          <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span><%= product.contact.location %></span>
+        </div>
+        <div class="flex items-center justify-center gap-3 text-gray-300">
+          <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          <a href="https://<%= product.contact.website %>" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors"><%= product.contact.website %></a>
+        </div>
+      </div>
+      <a href="<%= product.whatsappUrl %>" target="_blank" rel="noopener noreferrer" class="btn-whatsapp mt-8 px-10 py-4 rounded-full text-sm font-bold uppercase tracking-wider inline-flex items-center gap-2" aria-label="Order on WhatsApp">
+        Order on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <%- include('partials/footer.html') %>
+  <%- include('partials/cart-drawer.html') %>
+  <%- include('partials/whatsapp.html') %>
+  <%- include('partials/scripts.html') %>
+</body>
+</html>

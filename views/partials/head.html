@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="<%= pageDescription %>">
+<meta name="keywords" content="<%= pageKeywords %>">
+<meta name="author" content="LANZAA Hair & Skin">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="<%= canonicalUrl %>">
+<meta property="og:title" content="<%= pageTitle %>">
+<meta property="og:description" content="<%= pageDescription %>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="<%= canonicalUrl %>">
+<meta property="og:image" content="/images/image6.jpg">
+<meta property="og:site_name" content="LANZAA Hair & Skin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= pageTitle %>">
+<meta name="twitter:description" content="<%= pageDescription %>">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          gold: '#c9a84c',
+          'gold-light': '#e8d5a3',
+          'gold-dark': '#a68b3d',
+          beige: '#f5f0e8',
+          'beige-dark': '#e8dfd0',
+          maroon: '#8b2942',
+          'black-brand': '#1a1a1a'
+        },
+        fontFamily: {
+          display: ['Playfair Display', 'Georgia', 'serif'],
+          sans: ['Poppins', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="/css/custom.css">
+<title><%= pageTitle %></title>

@@ -1,0 +1,17 @@
+{
+  "name": "lanzaa-onion-hair-oil",
+  "version": "1.0.0",
+  "description": "LANZAA Onion Hair Oil — luxury product website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["lanzaa", "hair-oil", "express"],
+  "author": "LANZAA Hair & Skin",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
